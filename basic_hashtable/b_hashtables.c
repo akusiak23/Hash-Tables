@@ -94,7 +94,6 @@ void hash_table_insert(BasicHashTable *ht, char *key, char *value)
   {
     printf("\nOverwriting existing value\n");
     destroy_pair(ht->storage[h]);
-    ht->storage[h] = create_pair(key, value);
   }
   else
   {
@@ -118,7 +117,7 @@ void hash_table_remove(BasicHashTable *ht, char *key)
   else
   {
     printf("\nCannot remove, index %d does not exist\n", h);
-    exit(1);
+    return;
   }
 }
 
